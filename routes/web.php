@@ -19,3 +19,12 @@ Route::get('/', function () {
 
 //Creo la rotta per la pagina index
 Route::get('/comics', 'ComicController@index')->name('comics.index');
+
+//Creo la rotta per il create
+Route::get('/comics/create', 'ComicController@create')->name('comics.create');
+
+//Creo la rotta per lo store
+Route::post('/comics', 'ComicController@store')->name('comics.store');
+
+//Creo la rotta per lo show
+Route::get('/comics/{comic}', 'ComicController@show')->name('comics.show');
