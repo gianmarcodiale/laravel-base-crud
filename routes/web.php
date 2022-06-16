@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+//Creo la rotta per la pagina index
+Route::get('/comics', 'ComicController@index')->name('comics.index');
