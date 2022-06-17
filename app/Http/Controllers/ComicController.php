@@ -38,7 +38,10 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all())
+
+        //Validare i dati inseriti dall'utente
+
         $data = $request->all();
         Comic::create($data);
         return redirect()->route('comics.index');
@@ -64,7 +67,9 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        //dd($comic)
+        //Ritorno la view con il form per modificare i dati
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -76,7 +81,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        //dd($request->all())
+        //Salvo la richesta dentro la variabile $data
+        $data = $request->all();
+        //Faccio l'update dei dati del prodotto
+        $comic->update($data);
+        //Ritorno la pagina index
+        return redirect()->route('comics.index');
+
     }
 
     /**
