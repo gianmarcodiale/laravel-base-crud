@@ -29,6 +29,8 @@ Route::get('/comics/{comic}', 'ComicController@show')->name('comics.show');
 Route::get('/comics/{comic}/edit', 'ComicController@edit')->name('comics.edit');
 //Creo la rotta per l'update
 Route::put('/comics/{comic}', 'ComicController@update')->name('comics.update');
+//Creo la rotta per il delete
+Route::delete('/comics/{comic}', 'ComicController@destroy')->name('comics.destroy');
 
 
 
