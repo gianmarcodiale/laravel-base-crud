@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
+use App\Http\Requests\ComicRequest;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -36,13 +37,13 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
         //dd($request->all())
 
         //Validare i dati inseriti dall'utente
 
-        $data = $request->all();
+        $data = $request->validated();
         Comic::create($data);
         return redirect()->route('comics.index');
     }
@@ -79,11 +80,11 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
         //dd($request->all())
         //Salvo la richesta dentro la variabile $data
-        $data = $request->all();
+        $data = $request->validated();
         //Faccio l'update dei dati del prodotto
         $comic->update($data);
         //Ritorno la pagina index
