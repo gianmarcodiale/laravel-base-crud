@@ -19,7 +19,7 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" name="title" id="title" aria-describedby="titleHelper"
-                    placeholder="" class="@error('title') is-invalid @enderror">
+                    placeholder="" class="@error('title') is-invalid @enderror" value="{{ old('title') }}">
                 <small id="titleHelper" class="form-text text-muted">Type a title</small>
                 {{-- Pop-up di errore --}}
                 @error('title')
@@ -35,7 +35,7 @@
             <div class="mb-3">
                 <label for="thumb" class="form-label">Thumbnail</label>
                 <input type="text" class="form-control" name="thumb" id="thumb" aria-describedby="thumbHelper"
-                    placeholder="" class="@error('thumb') is-invalid @enderror">
+                    placeholder="" class="@error('thumb') is-invalid @enderror" value="{{ old('thumb') }}">
                 <small id="thumbHelper" class="form-text text-muted">Insert a thumbnail</small>
                 {{-- Pop-up di errore --}}
                 @error('thumb')
@@ -50,8 +50,9 @@
 
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" name="price" id="price" aria-describedby="priceHelper"
-                    placeholder="" class="@error('price') is-invalid @enderror">
+                <input type="number" class="form-control" name="price" id="price" aria-describedby="priceHelper"
+                    placeholder="'0.00'" class="@error('price') is-invalid @enderror" min='0' step='.01'
+                    value="{{ old('price') }}">
                 <small id="priceHelper" class="form-text text-muted">Insert price</small>
                 {{-- Pop-up di errore --}}
                 @error('price')
@@ -67,14 +68,14 @@
             <div class="mb-3">
                 <label for="series" class="form-label">Series</label>
                 <input type="text" class="form-control" name="series" id="series" aria-describedby="seriesHelper"
-                    placeholder="">
+                    placeholder="" value="{{ old('series') }}">
                 <small id="seriesHelper" class="form-text text-muted">Type a serie</small>
             </div>
 
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Sale Date</label>
-                <input type="text" class="form-control" name="sale_date" id="sale_date" aria-describedby="saleDateHelper"
-                    placeholder="" class="@error('sale_date') is-invalid @enderror">
+                <input type="date" class="form-control" name="sale_date" id="sale_date" aria-describedby="saleDateHelper"
+                    placeholder="" class="@error('sale_date') is-invalid @enderror" value="{{ old('sale_date') }}">
                 <small id="saleDateHelper" class="form-text text-muted">Type a sale date</small>
                 {{-- Pop-up di errore --}}
                 @error('sale_date')
@@ -90,13 +91,14 @@
             <div class="mb-3">
                 <label for="type" class="form-label">Type</label>
                 <input type="text" class="form-control" name="type" id="type" aria-describedby="typeHelper"
-                    placeholder="">
+                    placeholder="" value="{{ old('type') }}">
                 <small id="typeHelper" class="form-text text-muted">Insert a type</small>
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                <textarea class="form-control" name="description" id="description" rows="5"
+                    value="{{ old('description') }}"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Add Comic</button>
