@@ -52,7 +52,7 @@
             {{-- Price input --}}
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" name="price" id="price" aria-describedby="priceHelper"
+                <input type="number" class="form-control" name="price" id="price" aria-describedby="priceHelper"
                     placeholder="" value="{{ $comic->price }}" class="@error('price') is-invalid @enderror">
                 {{-- Pop-up di errore --}}
                 @error('price')
@@ -75,7 +75,7 @@
             {{-- Sale input --}}
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Sale Date</label>
-                <input type="text" class="form-control" name="sale_date" id="sale_date" aria-describedby="saleDateHelper"
+                <input type="date" class="form-control" name="sale_date" id="sale_date" aria-describedby="saleDateHelper"
                     placeholder="" value="{{ $comic->sale_date }}" class="@error('sale_date') is-invalid @enderror">
                 {{-- Pop-up di errore --}}
                 @error('sale_date')

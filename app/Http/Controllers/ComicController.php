@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Comic;
+use App\Models\Comic;
 use App\Http\Requests\ComicRequest;
 use Illuminate\Http\Request;
 
@@ -51,7 +51,7 @@ class ComicController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Comic  $comic
+     * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic)
@@ -63,7 +63,7 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Comic  $comic
+     * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function edit(Comic $comic)
@@ -77,7 +77,7 @@ class ComicController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Comic  $comic
+     * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function update(ComicRequest $request, Comic $comic)
@@ -95,7 +95,7 @@ class ComicController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Comic  $comic
+     * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
     public function destroy(Comic $comic)

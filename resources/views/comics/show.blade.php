@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container text-center">
+    <div class="container text-center" id="show_content">
         <h1 class="my-5">{{ $comic->title }}</h1>
         <img src="{{ $comic->thumb }}" alt="" class="img-fluid" style="max-width:200px">
         <div class="comic_info my-3">

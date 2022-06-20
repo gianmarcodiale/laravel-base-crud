@@ -1,2 +1,61 @@
 //Bootstrap CSS
 @use 'bootstrap';
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+// #Region Header
+#site_header {
+    #site_nav {
+        #collapsibleNavId {
+            a {
+                font-size: 20px;
+                color: #333333;
+                font-weight: 700;
+            }
+        }
+    }
+    .jumbo {
+        background-image: url('https://www.dccomics.com/sites/default/files/dc-hero_20220620_Pride_CrushLobo_62ad150d8b2781.68532819.jpg');
+        height: 600px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+    }
+}
+
+// #Region welcome
+#welcome_page {
+    .content {
+        height: 100vh;
+    }
+}
+
+// #Region index
+.actions {
+    width: 135px;
+}
+
+// show
+#show_content {
+    padding: 4rem 0;
+}
+
+// #Region Footer
+
+#site_footer {
+    background-size: cover;
+    background-color: #1e1e1e;
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    .dc_logo {
+        background-image: url("/img/dc-logo-bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
